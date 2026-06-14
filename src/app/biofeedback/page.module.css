@@ -1,0 +1,216 @@
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--bg-card);
+  backdrop-filter: var(--blur-amount);
+  -webkit-backdrop-filter: var(--blur-amount);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+/* Form Sections */
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.formGroup {
+  margin-bottom: 2rem;
+}
+
+.formGroup:last-child {
+  margin-bottom: 0;
+}
+
+/* Energy Slider specific */
+.energySliderWrapper {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.energyValue {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-purple);
+  text-shadow: var(--glow-purple);
+  line-height: 1.2;
+}
+
+.energyDescription {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.slider {
+  width: 100%;
+  accent-color: var(--color-purple);
+  height: 6px;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+/* Mood selector grid */
+.moodGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.moodCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.moodCard:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.moodCardActive {
+  background: rgba(139, 92, 246, 0.06);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: var(--glow-purple);
+}
+
+.moodEmoji {
+  font-size: 1.75rem;
+}
+
+.moodLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.moodCardActive .moodLabel {
+  color: var(--color-purple);
+}
+
+/* Muscle soreness layout */
+.sorenessGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.muscleRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.muscleName {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.levelSelector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.levelBtn {
+  flex: 1;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-secondary);
+  transition: var(--transition-smooth);
+}
+
+.levelBtn:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.levelBtnFineActive {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: var(--color-green);
+}
+
+.levelBtnTightActive {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: var(--color-amber);
+}
+
+.levelBtnSoreActive {
+  background: rgba(244, 63, 94, 0.08);
+  border-color: rgba(244, 63, 94, 0.3);
+  color: var(--color-pink);
+}
+
+/* Action button */
+.btnSubmit {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--color-purple), var(--color-pink));
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: var(--glow-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: var(--transition-smooth);
+}
+
+.btnSubmit:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+@media (max-width: 576px) {
+  .moodGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sorenessGrid {
+    grid-template-columns: 1fr;
+  }
+}

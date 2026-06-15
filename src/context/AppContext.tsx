@@ -13,8 +13,16 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
-  // Use June 14, 2026 as default based on database entries and local time
-  const [currentDate, setCurrentDate] = useState<string>('2026-06-14');
+  // Helper to get today's date in local timezone YYYY-MM-DD format
+  const getTodayDateString = () => {
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  const [currentDate, setCurrentDate] = useState<string>(getTodayDateString());
   
   // Set default user
   const userId = '00000000-0000-0000-0000-000000000001';
@@ -32,6 +40,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         const savedDate = localStorage.getItem('aura_fit_date');
         if (savedDate) {
           setCurrentDate(savedDate);
+        } else {
+          setCurrentDate(getTodayDateString());
         }
       }
     }

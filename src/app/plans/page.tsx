@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import MainLayout from '@/components/MainLayout';
 import { supabase } from '@/lib/supabase';
 import { useApp } from '@/context/AppContext';
+import WeeklyCalendarStrip from '@/components/WeeklyCalendarStrip';
 import { 
   Calendar, 
   Dumbbell, 
@@ -232,6 +233,7 @@ export default function PlansPage() {
 
   return (
     <MainLayout title="Kế hoạch hàng ngày">
+      <WeeklyCalendarStrip />
       {loading ? (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '300px', flexDirection: 'column', gap: '1rem' }}>
           <RefreshCw size={36} className="spin" style={{ animation: 'spin 2s linear infinite', color: 'var(--color-cyan)' }} />

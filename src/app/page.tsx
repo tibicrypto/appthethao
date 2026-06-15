@@ -6,6 +6,7 @@ import SVGRingProgress from '@/components/SVGRingProgress';
 import { SVGBarChart, SVGLineChart } from '@/components/SVGCharts';
 import { supabase, DEFAULT_USER_ID } from '@/lib/supabase';
 import { useApp } from '@/context/AppContext';
+import WeeklyCalendarStrip from '@/components/WeeklyCalendarStrip';
 import { 
   Footprints, 
   Flame, 
@@ -312,6 +313,8 @@ export default function DashboardPage() {
           <span>Cập nhật chỉ số</span>
         </button>
       </div>
+
+      <WeeklyCalendarStrip />
 
       {loading ? (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '300px', flexDirection: 'column', gap: '1rem' }}>

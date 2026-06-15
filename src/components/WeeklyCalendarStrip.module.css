@@ -1,0 +1,138 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-card);
+  backdrop-filter: var(--blur-amount);
+  -webkit-backdrop-filter: var(--blur-amount);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.navBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-secondary);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.navBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--text-muted);
+  color: var(--text-primary);
+}
+
+.daysWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.daysWrapper::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.dayCard {
+  flex: 1;
+  min-width: 60px;
+  max-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem 0.5rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.dayCard:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.dayCardActive {
+  background: rgba(6, 182, 212, 0.08);
+  border-color: rgba(6, 182, 212, 0.25);
+  box-shadow: var(--glow-cyan);
+}
+
+.dayName {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.dayCardActive .dayName {
+  color: var(--color-cyan);
+}
+
+.dayNumber {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.dayCardActive .dayNumber {
+  color: var(--color-cyan);
+}
+
+.todayLabel {
+  font-size: 0.6rem;
+  font-weight: 700;
+  background: var(--color-purple);
+  color: white;
+  padding: 1px 4px;
+  border-radius: 4px;
+  margin-top: 0.25rem;
+}
+
+.todayBtn {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-cyan);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(6, 182, 212, 0.03);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.todayBtn:hover {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: var(--color-cyan);
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+  
+  .dayCard {
+    min-width: 50px;
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .dayNumber {
+    font-size: 1.1rem;
+  }
+}
